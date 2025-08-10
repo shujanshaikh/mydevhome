@@ -23,9 +23,9 @@ const projects: Project[] = [
 
 export function Projects() {
   return (
-    <section id="projects" className="container mx-auto px-4 py-12">
-      <div className="mb-4 text-lg font-medium text-neutral-100">Projects</div>
-      <div className="grid gap-4 md:grid-cols-1">
+    <section id="projects" className="container mx-auto px-4 py-8">
+      <div className="mb-3 text-lg font-medium text-neutral-100">Projects</div>
+      <div className="grid gap-3 md:grid-cols-1">
         {projects.map((p) => (
           <Card key={p.title} className="overflow-hidden">
             <CardHeader>
