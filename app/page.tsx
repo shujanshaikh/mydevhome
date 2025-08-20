@@ -1,22 +1,19 @@
 import { Hero } from "@/components/sections/hero";
-import { Expertise } from "@/components/sections/expertise";
-import { Work } from "@/components/sections/work";
+import { Overview } from "@/components/sections/overview";
 import { Projects } from "@/components/sections/projects";
 import { GithubSection } from "@/components/sections/github";
 import { TweetEmbed } from "@/components/sections/tweet";
 
 export default function Home() {
   return (
-    <div className="space-y-4">
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/2 top-[-10%] h-[40vh] w-[40vw] -translate-x-1/2 rounded-full bg-gradient-to-tr from-purple-500/20 via-cyan-400/20 to-amber-300/20 blur-3xl" />
+    <main className="max-w-screen overflow-x-hidden px-2 flex justify-center min-h-screen">
+      <div className="w-full max-w-3xl mx-auto space-y-12">
+        <Hero />
+        <Overview />
+        <GithubSection username="shujanshaikh" />
+        <Projects />
+        <TweetEmbed />
       </div>
-      <Hero />
-      <GithubSection username="shujanshaikh" />
-      <TweetEmbed />
-      <Expertise />
-      <Projects />
-      <Work />
-    </div>
+    </main>
   );
 }

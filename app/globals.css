@@ -1,17 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --font-sans:
+        "Manrope", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+        Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-mono:
+        "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+    --color-edge: #262626;
+    --color-muted: #525252;
+    --color-muted-foreground: #a3a3a3;
+    --color-accent: #0ea5e9;
+    --color-accent-foreground: #e0f2fe;
 }
 
-body { font-family: var(--font-sans); }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-.container { max-width: 900px; }
+html {
+    background: #0a0a0a;
+    color: #ffffff;
+}
 
-/* Hide scrollbars but keep scrolling */
-/* For WebKit-based browsers */
-::-webkit-scrollbar { width: 0; height: 0; }
-::-webkit-scrollbar-thumb { background: transparent; }
-/* For Firefox */
-* { scrollbar-width: none; }
+body {
+    font-family: var(--font-sans);
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.border-edge {
+    border-color: var(--color-edge);
+}
+
+.text-muted-foreground {
+    color: var(--color-muted-foreground);
+}
+
+.bg-muted {
+    background-color: rgb(64 64 64 / 0.3);
+}
+
+.screen-line-before::before,
+.screen-line-after::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--color-edge);
+    z-index: 1;
+}
+
+.screen-line-before {
+    position: relative;
+}
+
+.screen-line-before::before {
+    top: 0;
+}
+
+.screen-line-after {
+    position: relative;
+}
+
+.screen-line-after::after {
+    bottom: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Terminal-style scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Terminal cursor animation */
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+/* Terminal text effects */
+.terminal-text {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+/* Selection styling */
+::selection {
+    background: #333;
+    color: #ffffff;
+}
+
+/* Focus states */
+*:focus {
+    outline: 2px solid #666;
+    outline-offset: 2px;
+}

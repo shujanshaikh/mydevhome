@@ -1,60 +1,76 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight, ExternalLink, Github, Link } from "lucide-react";
 
-type Project = {
-  title: string;
-  description: string;
-  primaryLink: { label: string; href: string };
-  secondaryLinks?: { label: string; href: string }[];
-};
-
-const projects: Project[] = [
+const projects = [
   {
-    title: "S3.chat — Multiple AI chat bots (Convex + Next.js + ai-sdk )",
+    title: "swizdotdev",
     description:
-      "AI SDK with web search, attachments support, and a better UX. Open source repo and build thread.",
-    primaryLink: { label: "View repo", href: "https://github.com/shujanshaikh/s3chat" },
-    secondaryLinks: [
-      { label: "Live", href: "https://s3chat.space/" },
-      { label: "Tweet", href: "https://x.com/shujanshaikh/status/1941758231644155926" },
-    ],
+      "An open-source alternative to same.dev for building full-stack web applications through AI prompting. It can clone any website just paste the url and it will clone the website for you",
+    href: "https://www.swizdotdev.space/",
+    github: "https://github.com/shujanshaikh/swizdotdev",
+  },
+  {
+    title: "s3.chat",
+    description:
+      "A powerful chatbot platform that supports multiple AI models, real-time web search, and file processing capabilities. Built for developers and teams.",
+    href: "https://s3chat.space/",
+    github: "https://github.com/shujanshaikh/s3chat",
   },
 ];
 
 export function Projects() {
   return (
-    <section id="projects" className="container mx-auto px-4 py-8">
-      <div className="mb-3 text-lg font-medium text-neutral-100">Projects</div>
-      <div className="grid gap-3 md:grid-cols-1">
-        {projects.map((p) => (
-          <Card key={p.title} className="overflow-hidden">
-            <CardHeader>
-              <CardTitle>{p.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-neutral-400">{p.description}</p>
-            </CardContent>
-            <CardFooter>
-              <div className="flex flex-wrap gap-2">
-                <Button asChild variant="outline">
-                  <a href={p.primaryLink.href} target="_blank" rel="noreferrer">
-                    {p.primaryLink.label}
+    <section
+      className="screen-line-before screen-line-after border-x border-edge"
+      id="projects"
+      aria-labelledby="projects-title"
+    >
+      <div className="screen-line-after px-4 py-3">
+        <h2 id="projects-title" className="text-xl font-semibold">
+          projects
+        </h2>
+      </div>
+      <div className="px-4 pb-4 space-y-8">
+        {projects.map((project) => (
+          <div
+            key={project.title}
+            className="border border-edge rounded-xl p-8 hover:bg-zinc-900/20 transition-colors"
+          >
+            {/* Header */}
+            <div className="mb-6">
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="text-xl font-semibold tracking-tight">
+                  {project.title}
+                </h3>
+                <div className="flex flex-col gap-2 mt-4">
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-white hover:text-gray-300 transition-colors duration-200 text-sm font-medium"
+                  >
+                    <ExternalLink className="size-4" />
+                    <span>View Project</span>
                   </a>
-                </Button>
-                {p.secondaryLinks?.map((l) => (
-                  <Button key={l.href} asChild variant="outline">
-                    <a href={l.href} target="_blank" rel="noreferrer">
-                      {l.label}
-                    </a>
-                  </Button>
-                ))}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-200 transition-colors duration-200 text-sm font-medium"
+                  >
+                    <Github className="size-4" />
+                    <span>Source Code</span>
+                  </a>
+                </div>
               </div>
-            </CardFooter>
-          </Card>
+            </div>
+
+            {/* Description */}
+            <p className="text-base text-muted-foreground leading-loose mb-6 max-w-3xl">
+              {project.description}
+            </p>
+          </div>
         ))}
       </div>
     </section>
   );
 }
-
-

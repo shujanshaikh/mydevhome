@@ -65,14 +65,20 @@ export function TweetEmbed() {
   }, []);
 
   return (
-    <section className="container mx-auto px-4">
-      <div className="mb-3 text-sm uppercase tracking-widest text-neutral-500">Updates</div>
-      <div className="grid gap-4 md:grid-cols-2">
-        <div className="overflow-hidden rounded-md border border-neutral-800 bg-neutral-950 p-2">
-          <div ref={tweet1Ref} />
-        </div>
-        <div className="overflow-hidden rounded-md border border-neutral-800 bg-neutral-950 p-2">
-          <div ref={tweet2Ref} />
+    <section className="screen-line-before screen-line-after border-x border-edge" id="tweets" aria-labelledby="tweets-title">
+      <div className="screen-line-after px-4 py-3">
+        <h2 id="tweets-title" className="text-xl font-semibold">
+          tweets
+        </h2>
+      </div>
+      <div className="px-4 pb-4">
+        <div className="grid gap-6 md:grid-cols-2">
+          <div className="border border-edge rounded-xl p-4 hover:bg-zinc-900/20 transition-colors">
+            <div ref={tweet1Ref} />
+          </div>
+          <div className="border border-edge rounded-xl p-4 hover:bg-zinc-900/20 transition-colors">
+            <div ref={tweet2Ref} />
+          </div>
         </div>
       </div>
     </section>

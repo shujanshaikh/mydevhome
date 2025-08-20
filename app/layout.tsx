@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme/theme-provider";
 
 export const metadata: Metadata = {
   title: "Shujan Shaikh",
@@ -13,11 +12,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`antialiased min-h-screen bg-black text-neutral-200`}>
-        <ThemeProvider>
-          <main>{children}</main>
-        </ThemeProvider>
+    <html lang="en" suppressHydrationWarning className="bg-[#0a0a0a]">
+      <body className="antialiased min-h-screen bg-[#0a0a0a] text-white">
+        <main className="min-h-screen">{children}</main>
       </body>
     </html>
   );

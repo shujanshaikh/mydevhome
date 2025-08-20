@@ -2,9 +2,10 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
-import { Card, CardContent } from "@/components/ui/card";
 
-const GitHubCalendar = dynamic(() => import("react-github-calendar"), { ssr: false });
+const GitHubCalendar = dynamic(() => import("react-github-calendar"), {
+  ssr: false,
+});
 
 export function GithubSection({ username }: { username: string }) {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -14,15 +15,17 @@ export function GithubSection({ username }: { username: string }) {
     if (!container) return;
 
     const scrollToRightEdge = () => {
-      const svg = container.querySelector('svg');
+      const svg = container.querySelector("svg");
       let contentWidth = container.scrollWidth;
       try {
         if (svg) {
-          // Prefer exact SVG width if available
           const svgBox = (svg as SVGGraphicsElement).getBBox?.();
-          const svgWidth = svgBox && Number.isFinite(svgBox.width) ? svgBox.width : svg.getBoundingClientRect().width;
+          const svgWidth =
+            svgBox && Number.isFinite(svgBox.width)
+              ? svgBox.width
+              : svg.getBoundingClientRect().width;
           if (svgWidth && Number.isFinite(svgWidth)) {
-            contentWidth = Math.max(contentWidth, svgWidth + 32); // + padding
+            contentWidth = Math.max(contentWidth, svgWidth + 32);
           }
         }
       } catch {
@@ -32,7 +35,6 @@ export function GithubSection({ username }: { username: string }) {
       container.scrollLeft = targetLeft;
     };
 
-    // Multiple attempts to cover hydration/late layout
     const rafId = requestAnimationFrame(scrollToRightEdge);
     const t1 = setTimeout(scrollToRightEdge, 200);
     const t2 = setTimeout(scrollToRightEdge, 600);
@@ -42,7 +44,7 @@ export function GithubSection({ username }: { username: string }) {
     mutationObserver.observe(container, { childList: true, subtree: true });
 
     let resizeObserver: ResizeObserver | undefined;
-    if (typeof ResizeObserver !== 'undefined') {
+    if (typeof ResizeObserver !== "undefined") {
       resizeObserver = new ResizeObserver(scrollToRightEdge);
       resizeObserver.observe(container);
     }
@@ -58,23 +60,23 @@ export function GithubSection({ username }: { username: string }) {
   }, []);
 
   return (
-    <section id="github" className="container mx-auto px-4 pt-4">
-      <div className="mb-3 text-sm uppercase tracking-widest text-neutral-500">GitHub</div>
-      <Card className="bg-neutral-950/60 border-neutral-800">
-        <CardContent className="p-3">
-          <div ref={scrollRef} className="overflow-x-auto rounded-md border border-neutral-800 p-3 no-scrollbar">
-            <GitHubCalendar
-              username={username}
-              colorScheme="dark"
-              blockMargin={5}
-              blockSize={11}
-              fontSize={12}
-            />
-          </div>
-        </CardContent>
-      </Card>
+    <section className="screen-line-before screen-line-after border-x border-edge" id="github" aria-labelledby="github-title">
+      <div className="screen-line-after px-4">
+      </div>
+      <div className="p-4">
+        <div
+          ref={scrollRef}
+          className="overflow-x-auto bg-[radial-gradient(var(--pattern-foreground)_1px,transparent_0)] bg-[length:10px_10px] bg-center [--pattern-foreground:var(--color-white)]/5 rounded-lg p-4"
+        >
+          <GitHubCalendar
+            username={username}
+            colorScheme="dark"
+            blockMargin={3}
+            blockSize={12}
+            fontSize={11}
+          />
+        </div>
+      </div>
     </section>
   );
 }
-
-

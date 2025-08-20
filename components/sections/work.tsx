@@ -19,9 +19,11 @@ const upwork: UpworkItem[] = [
 
 export function Work() {
   return (
-    <section id="work" className="container mx-auto px-4 py-8">
-      <div className="mb-2 text-lg font-medium text-neutral-100">Work Experience</div>
-      <p className="mb-4 text-sm text-neutral-400">Freelance & contract work delivered with care.</p>
+    <section id="work" className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="mb-12">
+        <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4 font-mono tracking-tight">Work Experience</h2>
+        <p className="text-zinc-400 text-base lg:text-lg font-mono leading-relaxed">Freelance & contract work delivered with care.</p>
+      </div>
 
       <Card>
         <CardHeader>

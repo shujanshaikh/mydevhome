@@ -1,51 +1,40 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { FaXTwitter, FaGithub, FaLinkedin } from "react-icons/fa6";
-import { HiOutlineMail } from "react-icons/hi";
 
 export function Hero() {
   return (
-    <section className="container mx-auto px-4 py-8 md:py-10">
-      <div className="flex items-center justify-between gap-4">
-        <div className="min-w-0 space-y-3">
-          <h1 className="truncate text-4xl font-semibold tracking-tight text-neutral-100 md:text-5xl">Shujan Shaikh</h1>
-          <p className="max-w-prose text-neutral-400">I cook with my laptop</p>
-          <div className="flex gap-2">
-          <Button asChild variant="ghost" size="icon" aria-label="X / Twitter" title="X / Twitter" className="rounded-full ring-1 ring-white/10">
-            <Link href="https://x.com/shujanshaikh" target="_blank" rel="noreferrer">
-              <FaXTwitter />
-            </Link>
-          </Button>
-          <Button asChild variant="ghost" size="icon" aria-label="GitHub" title="GitHub" className="rounded-full ring-1 ring-white/10">
-            <Link href="https://github.com/shujanshaikh" target="_blank" rel="noreferrer">
-              <FaGithub />
-            </Link>
-          </Button>
-          <Button asChild variant="ghost" size="icon" aria-label="LinkedIn" title="LinkedIn" className="rounded-full ring-1 ring-white/10">
-            <Link href="https://www.linkedin.com/in/shujan-shaikh-993201235/" target="_blank" rel="noreferrer">
-              <FaLinkedin />
-            </Link>
-          </Button>
-          <Button asChild variant="ghost" size="icon" aria-label="Email" title="Email" className="rounded-full ring-1 ring-white/10">
-            <Link href="mailto:shaikhshujan@gmail.com">
-              <HiOutlineMail />
-            </Link>
-          </Button>
+    <>
+      {/* Spacer area (was header mark) */}
+      <div className="aspect-[2/1] sm:aspect-[5/1] border-x border-edge screen-line-before screen-line-after before:-top-px after:-bottom-px" />
+
+      {/* Profile Header with Avatar and Name */}
+      <div className="screen-line-after flex border-x border-edge">
+        <div className="shrink-0 border-r border-edge relative">
+          <div className="mx-[2px] my-[3px] relative">
+            <Image
+              src="https://pbs.twimg.com/profile_images/1933617215485485056/4OF_2abd_400x400.jpg"
+              alt="Shujan Shaikh's avatar"
+              width={160}
+              height={160}
+              className="rounded-full ring-1 ring-zinc-600 ring-offset-2 ring-offset-black select-none sm:w-40 sm:h-40 w-32 h-32"
+              priority
+            />
           </div>
         </div>
 
-        <div className="relative h-24 w-24 flex-none overflow-hidden rounded-full ring-1 ring-white/10 md:h-32 md:w-32">
-          <Image
-            src="https://pbs.twimg.com/profile_images/1933617215485485056/4OF_2abd_400x400.jpg"
-            alt="Shujan profile"
-            fill
-            className="object-cover"
-          />
+        <div className="flex flex-1 flex-col">
+          <div className="border-t border-edge">
+            <h1 className="flex items-center pl-4 text-3xl font-semibold">
+              Shujan Shaikh
+            </h1>
+
+            <div className="h-12 border-t border-edge py-1 pl-4 sm:h-auto">
+              <p className="font-mono text-sm text-muted-foreground select-none">
+                Full-stack Developer
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
-
-
