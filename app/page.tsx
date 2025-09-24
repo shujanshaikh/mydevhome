@@ -2,7 +2,6 @@ import { Hero } from "@/components/sections/hero";
 import { Overview } from "@/components/sections/overview";
 import { Projects } from "@/components/sections/projects";
 import { GithubSection } from "@/components/sections/github";
-import { TweetEmbed } from "@/components/sections/tweet";
 
 export default function Home() {
   return (
@@ -12,7 +11,6 @@ export default function Home() {
         <Overview />
         <GithubSection username="shujanshaikh" />
         <Projects />
-        <TweetEmbed />
       </div>
     </main>
   );
