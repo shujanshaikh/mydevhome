@@ -1,17 +1,19 @@
+import { SocialBar } from "@/components/site/social-bar";
 import { Hero } from "@/components/sections/hero";
-import { Overview } from "@/components/sections/overview";
-import { Projects } from "@/components/sections/projects";
-import { GithubSection } from "@/components/sections/github";
+import Projects from "@/components/sections/projects";
 
 export default function Home() {
   return (
-    <main className="max-w-screen overflow-x-hidden px-2 flex justify-center min-h-screen">
-      <div className="w-full max-w-3xl mx-auto space-y-12">
-        <Hero />
-        <Overview />
-        <GithubSection username="shujanshaikh" />
-        <Projects />
-      </div>
-    </main>
+    <div className="min-h-screen relative">
+      <main className="max-w-screen overflow-x-hidden px-2 flex justify-center">
+        <div className="w-full max-w-4xl mx-auto space-y-8 py-8">
+          <Hero />
+          <Projects />
+        </div>
+      </main>
+
+      {/* Minimal Floating Bar with Social Links & Theme Toggle */}
+      <SocialBar />
+    </div>
   );
 }

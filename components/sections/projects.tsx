@@ -1,76 +1,93 @@
-import { ArrowUpRight, ExternalLink, Github, Link } from "lucide-react";
+import React from 'react';
 
-const projects = [
-  {
-    title: "swizdotdev",
-    description:
-      "An open-source alternative to same.dev for building full-stack web applications through AI prompting. It can clone any website just paste the url and it will clone the website for you",
-    href: "https://www.swizdotdev.space/",
-    github: "https://github.com/shujanshaikh/swizdotdev",
-  },
-  {
-    title: "s3.chat",
-    description:
-      "A powerful chatbot platform that supports multiple AI models, real-time web search, and file processing capabilities. Built for developers and teams.",
-    href: "https://s3chat.space/",
-    github: "https://github.com/shujanshaikh/s3chat",
-  },
-];
+const Projects = () => {
+  const projects = [
+    {
+      id: 1,
+      title: "(swiz) Vibe Coding Platform",
+      description: "Build full‑stack web apps by prompting",
+      tech: ["next.js", "tailwind", "typescript" , "trpc" , "better-auth" ,  "ai sdk" , "e2b" , "postgres" , "drizzle" , "shadcn"],
+      link: "https://www.swizdotdev.space/",
+      github: "https://github.com/shujanshaikh/swizdotdev"
+    },
+    {
+      id: 2,
+      title: "(s3chat) Chatbot ",
+      description: "a chatbot platform that supports multiple ai models, real-time web search",
+      tech: ["nextjs", "typescript", "convex" , "clerk" , "aisdk"],
+      link: "#",
+      github: "https://github.com/shujanshaikh/s3chat"
+    },
+    // {
+    //   id: 3,
+    //   title: "Weather Dashboard",
+    //   description: "A responsive weather dashboard with location-based forecasts.",
+    //   tech: ["React", "API Integration", "Charts.js"],
+    //   link: "#",
+    //   github: "#"
+    // }
+  ];
 
-export function Projects() {
   return (
-    <section
-      className="screen-line-before screen-line-after border-x border-edge"
-      id="projects"
-      aria-labelledby="projects-title"
-    >
-      <div className="screen-line-after px-4 py-3">
-        <h2 id="projects-title" className="text-xl font-semibold">
-          projects
-        </h2>
-      </div>
-      <div className="px-4 pb-4 space-y-8">
-        {projects.map((project) => (
-          <div
-            key={project.title}
-            className="border border-edge rounded-xl p-8 hover:bg-zinc-900/20 transition-colors"
-          >
-            {/* Header */}
-            <div className="mb-6">
-              <div className="flex items-start justify-between mb-3">
-                <h3 className="text-xl font-semibold tracking-tight">
-                  {project.title}
-                </h3>
-                <div className="flex flex-col gap-2 mt-4">
-                  <a
-                    href={project.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-white hover:text-gray-300 transition-colors duration-200 text-sm font-medium"
-                  >
-                    <ExternalLink className="size-4" />
-                    <span>View Project</span>
-                  </a>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-200 transition-colors duration-200 text-sm font-medium"
-                  >
-                    <Github className="size-4" />
-                    <span>Source Code</span>
-                  </a>
+    <>
+      {/* Spacer area */}
+      <div className="aspect-[4/1] sm:aspect-[8/1] border-x border-edge screen-line-before screen-line-after before:-top-px after:-bottom-px" />
+
+      {/* Projects Section */}
+      <div className="screen-line-after border-x border-edge">
+        <div className="px-4 py-4">
+          <h2 className="text-lg font-poppins font-semibold mb-3 text-zinc-300 flex items-center gap-2">
+            stuff i’ve worked on
+          </h2>
+
+          <div className="space-y-2">
+            {projects.map((project) => (
+              <div key={project.id}>
+                <div className="border-t border-edge">
+                  <div className="px-4 py-4">
+                    <h3 className="text-xl font-poppins font-semibold mb-2 text-zinc-200">
+                      {project.title}
+                    </h3>
+
+                    <p className="text-sm text-zinc-400 leading-relaxed mb-3 font-poppins">
+                      {project.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="text-xs text-zinc-500 font-poppins"
+                        >
+                          {tech}
+                          {techIndex < project.tech.length - 1 && " • "}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-4">
+                      <a
+                        href={project.link}
+                        className="text-sm text-zinc-400 hover:text-zinc-300 transition-colors font-poppins"
+                      >
+                        view project →
+                      </a>
+                      <a
+                        href={project.github}
+                        className="text-sm text-zinc-400 hover:text-zinc-300 transition-colors font-poppins"
+                      >
+                        github →
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {/* Description */}
-            <p className="text-base text-muted-foreground leading-loose mb-6 max-w-3xl">
-              {project.description}
-            </p>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </section>
+    </>
   );
-}
+};
+
+export default Projects;
