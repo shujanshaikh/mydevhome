@@ -26,7 +26,7 @@ export function SocialBar() {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/shujanshaikh",
+      url: "https://www.linkedin.com/in/shujanshaikh/",
       description: "Connect on LinkedIn",
     },
     {
@@ -44,7 +44,7 @@ export function SocialBar() {
   ];
 
   const handleEmailClick = async () => {
-    const email = "shujan.shaikh@example.com";
+    const email = "shaikhshujan@gmail.com";
     try {
       await navigator.clipboard.writeText(email);
       setEmailCopied(true);
@@ -57,7 +57,7 @@ export function SocialBar() {
   return (
     <TooltipProvider delayDuration={0}>
       <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="bg-background/95 backdrop-blur-xl border-border rounded-full px-6 py-4 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+        <div className="bg-background/95 backdrop-blur-xl border-border rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
           <div className="flex items-center gap-3">
             {socialLinks.map((social) => {
               const IconComponent = social.icon;
@@ -69,15 +69,15 @@ export function SocialBar() {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-10 w-10 rounded-full transition-all duration-200 hover:scale-110 hover:bg-transparent"
+                        className="h-8 w-8 rounded-full transition-all duration-200 hover:scale-110 hover:bg-transparent"
                         onClick={handleEmailClick}
                       >
-                        <IconComponent 
+                        <IconComponent
                           className={`h-5 w-5 transition-colors ${
-                            emailCopied 
-                              ? "text-green-500" 
+                            emailCopied
+                              ? "text-green-500"
                               : "text-muted-foreground hover:text-foreground"
-                          }`} 
+                          }`}
                         />
                         {emailCopied && (
                           <span className="absolute -top-0.5 -right-0.5 h-1.5 w-1.5 bg-green-500 rounded-full animate-ping" />
@@ -87,7 +87,7 @@ export function SocialBar() {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-10 w-10 rounded-full transition-all duration-200 hover:scale-110 hover:bg-transparent"
+                        className="h-8 w-8 rounded-full transition-all duration-200 hover:scale-110 hover:bg-transparent"
                         asChild
                       >
                         <a
@@ -118,21 +118,21 @@ export function SocialBar() {
                     variant="ghost"
                     size="icon"
                     onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                    className="h-10 w-10 rounded-full transition-all duration-300 hover:scale-110 hover:rotate-12 hover:bg-transparent"
+                    className="h-8 w-8 rounded-full transition-all duration-300 hover:scale-110 hover:rotate-12 hover:bg-transparent"
                   >
-                    <Sun 
+                    <Sun
                       className={`h-5 w-5 transition-all duration-300 absolute ${
-                        theme === "dark" 
-                          ? "opacity-100 scale-100 rotate-0" 
+                        theme === "dark"
+                          ? "opacity-100 scale-100 rotate-0"
                           : "opacity-0 scale-50 rotate-90"
-                      } text-muted-foreground`} 
+                      } text-muted-foreground`}
                     />
-                    <Moon 
+                    <Moon
                       className={`h-5 w-5 transition-all duration-300 ${
-                        theme === "light" 
-                          ? "opacity-100 scale-100 rotate-0" 
+                        theme === "light"
+                          ? "opacity-100 scale-100 rotate-0"
                           : "opacity-0 scale-50 -rotate-90"
-                      } text-muted-foreground`} 
+                      } text-muted-foreground`}
                     />
                   </Button>
                 </TooltipTrigger>
@@ -143,7 +143,7 @@ export function SocialBar() {
                 </TooltipContent>
               </Tooltip>
             ) : (
-              <div className="h-10 w-10 flex items-center justify-center">
+              <div className="h-8 w-8 flex items-center justify-center">
                 <div className="h-5 w-5 bg-muted rounded-full animate-pulse" />
               </div>
             )}
