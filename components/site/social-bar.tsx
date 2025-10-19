@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, Mail, Moon, Sun, Twitter, X } from "lucide-react";
+import { Github, Linkedin, Mail, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -69,7 +69,7 @@ export function SocialBar() {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-10 w-10 rounded-full transition-all duration-200 hover:scale-110"
+                        className="h-10 w-10 rounded-full transition-all duration-200 hover:scale-110 hover:bg-transparent"
                         onClick={handleEmailClick}
                       >
                         <IconComponent 
@@ -87,7 +87,7 @@ export function SocialBar() {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="h-10 w-10 rounded-full transition-all duration-200 hover:scale-110"
+                        className="h-10 w-10 rounded-full transition-all duration-200 hover:scale-110 hover:bg-transparent"
                         asChild
                       >
                         <a
@@ -118,7 +118,7 @@ export function SocialBar() {
                     variant="ghost"
                     size="icon"
                     onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-                    className="h-10 w-10 rounded-full transition-all duration-300 hover:scale-110 hover:rotate-12"
+                    className="h-10 w-10 rounded-full transition-all duration-300 hover:scale-110 hover:rotate-12 hover:bg-transparent"
                   >
                     <Sun 
                       className={`h-5 w-5 transition-all duration-300 absolute ${
