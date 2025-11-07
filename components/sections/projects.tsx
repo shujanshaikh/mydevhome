@@ -4,34 +4,25 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "(swiz) Vibe Coding Platform",
-      description: "Build full‑stack web apps by prompting",
-      tech: ["next.js", "tailwind", "typescript" , "trpc" , "better-auth" ,  "ai sdk" , "e2b" , "postgres" , "drizzle" , "shadcn"],
+      title: "(swiz) vibe coding platform",
+      description: "build full‑stack web apps by prompting",
+      tech: ["next.js", "tailwind", "typescript" , "trpc" , "better-auth" ,  "ai sdk" , "e2b" , "postgres" , "drizzle" , "shadcn" , "polar"],
       link: "https://www.swizdotdev.space/",
       github: "https://github.com/shujanshaikh/swizdotdev"
     },
     {
       id: 2,
-      title: "(s3chat) Chatbot ",
-      description: "a chatbot platform that supports multiple ai models, real-time web search",
-      tech: ["nextjs", "typescript", "convex" , "clerk" , "aisdk"],
-      link: "#",
-      github: "https://github.com/shujanshaikh/s3chat"
+      title: "(tabchat) ai chat & image generation platform",
+      description: "an ai chat app and image generation platform supporting all major models for both chat and image generation.",
+      tech: ["nextjs", "typescript", "convex" , "better-auth" , "aisdk"],
+      link: "https://tabchat.vercel.app/",
+      github: "https://github.com/shujanshaikh/tabchat"
     },
-    // {
-    //   id: 3,
-    //   title: "Weather Dashboard",
-    //   description: "A responsive weather dashboard with location-based forecasts.",
-    //   tech: ["React", "API Integration", "Charts.js"],
-    //   link: "#",
-    //   github: "#"
-    // }
   ];
 
   return (
     <>
-      {/* Spacer area */}
-      <div className="aspect-[4/1] sm:aspect-[8/1] border-x border-edge screen-line-before screen-line-after before:-top-px after:-bottom-px" />
+      {/* Spacer area removed */}
 
       {/* Projects Section */}
       <div className="screen-line-after border-x border-edge">

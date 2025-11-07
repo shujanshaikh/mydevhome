@@ -7,8 +7,7 @@ export function Hero() {
 
   return (
     <>
-      {/* Spacer area (was header mark) */}
-      <div className="aspect-[4/1] sm:aspect-[8/1] border-x border-edge screen-line-before screen-line-after before:-top-px after:-bottom-px" />
+      {/* Spacer area removed */}
 
       {/* Enhanced Profile Header with Avatar and About Section */}
       <div className="screen-line-after border-x border-edge">
