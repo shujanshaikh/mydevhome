@@ -57,7 +57,7 @@ export function SocialBar() {
   return (
     <TooltipProvider delayDuration={0}>
       <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50">
-        <div className="bg-background/95 backdrop-blur-xl border-border rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+        <div className="backdrop-blur-xl border-border rounded-full px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
           <div className="flex items-center gap-3">
             {socialLinks.map((social) => {
               const IconComponent = social.icon;
@@ -73,15 +73,8 @@ export function SocialBar() {
                         onClick={handleEmailClick}
                       >
                         <IconComponent
-                          className={`h-5 w-5 transition-colors ${
-                            emailCopied
-                              ? "text-green-500"
-                              : "text-muted-foreground hover:text-foreground"
-                          }`}
+                          className="h-5 w-5 transition-colors"
                         />
-                        {emailCopied && (
-                          <span className="absolute -top-0.5 -right-0.5 h-1.5 w-1.5 bg-green-500 rounded-full animate-ping" />
-                        )}
                       </Button>
                     ) : (
                       <Button
@@ -95,7 +88,7 @@ export function SocialBar() {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <IconComponent className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
+                          <IconComponent className="h-5 w-5 transition-colors" />
                         </a>
                       </Button>
                     )}
@@ -125,14 +118,14 @@ export function SocialBar() {
                         theme === "dark"
                           ? "opacity-100 scale-100 rotate-0"
                           : "opacity-0 scale-50 rotate-90"
-                      } text-muted-foreground`}
+                      }`}
                     />
                     <Moon
                       className={`h-5 w-5 transition-all duration-300 ${
                         theme === "light"
                           ? "opacity-100 scale-100 rotate-0"
                           : "opacity-0 scale-50 -rotate-90"
-                      } text-muted-foreground`}
+                      }`}
                     />
                   </Button>
                 </TooltipTrigger>
@@ -144,7 +137,7 @@ export function SocialBar() {
               </Tooltip>
             ) : (
               <div className="h-8 w-8 flex items-center justify-center">
-                <div className="h-5 w-5 bg-muted rounded-full animate-pulse" />
+                <div className="h-5 w-5 rounded-full animate-pulse" />
               </div>
             )}
           </div>
