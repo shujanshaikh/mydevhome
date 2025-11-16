@@ -1,18 +1,25 @@
 import React from 'react';
 
 const Projects = () => {
-  const projects = [
+  const projects = [{
+     id : 1,
+     title : "flycli (ai agent that lives in your browser)",
+     description : "flycli is your in-browser ai coding agent that understands your codebase, and edits your local files directly.",
+     tech : ["react", "tailwind", "typescript" , "aisdk" , "websocket" , "express"],
+     link : "https://flycli.vercel.app",
+     github : "https://github.com/shujanshaikh/flycli"
+  },
     {
-      id: 1,
-      title: "(tabchat) ai chat & image generation platform",
+      id: 2,
+      title: "tabchat (ai chat & image generation platform)",
       description: "an ai chat app and image generation platform supporting all major models for both chat and image generation.",
       tech: ["nextjs", "typescript", "convex" , "better-auth" , "aisdk"],
       link: "https://tabchat.vercel.app/",
       github: "https://github.com/shujanshaikh/tabchat"
     },
     {
-      id: 2,
-      title: "(swiz) vibe coding platform",
+      id: 3,
+      title: "swiz (vibe coding platform)",
       description: "build full‑stack web apps by prompting",
       tech: ["next.js", "tailwind", "typescript" , "trpc" , "better-auth" ,  "ai sdk" , "e2b" , "postgres" , "drizzle" , "shadcn" , "polar"],
       link: "https://www.swizdotdev.space/",
