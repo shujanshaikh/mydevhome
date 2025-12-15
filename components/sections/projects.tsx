@@ -3,6 +3,14 @@ import React from 'react';
 const Projects = () => {
   const projects = [{
      id : 1,
+     title : "grab-agent",
+     description : "Lovable, but for your localhost 👀\n\nIt's an extension of React Grab by @aidenybai, which basically grabs the elements and sends them to my hosted server. The server handles all the AI orchestration and makes changes to the local codebase.",
+     tech : ["react", "typescript", "nodejs", "express"],
+     link : "https://grab-agent.shujan.xyz",
+     github : "https://github.com/shujanshaikh/grab-agent"
+  },
+    {
+     id : 2,
      title : "flycli (ai agent that lives in your browser)",
      description : "flycli is your in-browser ai coding agent that understands your codebase, and edits your local files directly.",
      tech : ["react", "tailwind", "typescript" , "aisdk" , "websocket" , "express"],
@@ -10,7 +18,7 @@ const Projects = () => {
      github : "https://github.com/shujanshaikh/flycli"
   },
     {
-      id: 2,
+      id: 3,
       title: "tabchat (ai chat & image generation platform)",
       description: "an ai chat app and image generation platform supporting all major models for both chat and image generation.",
       tech: ["nextjs", "typescript", "convex" , "better-auth" , "aisdk"],
@@ -18,7 +26,7 @@ const Projects = () => {
       github: "https://github.com/shujanshaikh/tabchat"
     },
     {
-      id: 3,
+      id: 4,
       title: "swiz (vibe coding platform)",
       description: "build full‑stack web apps by prompting",
       tech: ["next.js", "tailwind", "typescript" , "trpc" , "better-auth" ,  "ai sdk" , "e2b" , "postgres" , "drizzle" , "shadcn" , "polar"],
@@ -45,7 +53,7 @@ const Projects = () => {
                       {project.title}
                     </h3>
 
-                    <p className="text-xs leading-relaxed mb-3 font-poppins">
+                    <p className="text-xs leading-relaxed mb-3 font-poppins whitespace-pre-line">
                       {project.description}
                     </p>
 
