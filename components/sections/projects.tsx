@@ -2,6 +2,14 @@ import React from 'react';
 
 const Projects = () => {
   const projects = [{
+     id : 0,
+     title : "ama",
+     description : "think lovable, but instead of the cloud, it works on your localhost \n\na full vscode editor in the browser, powered by an ai agent, making real changes to your local codebase with live preview",
+     tech : ["react", "typescript", "nodejs", "vscode", "ai"],
+     link : "https://ama.shujan.xyz",
+     github : ""
+  },
+  {
      id : 1,
      title : "grab-agent",
      description : "Lovable, but for your localhost 👀\n\nIt's an extension of React Grab by @aidenybai, which basically grabs the elements and sends them to my hosted server. The server handles all the AI orchestration and makes changes to the local codebase.",
