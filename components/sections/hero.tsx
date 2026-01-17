@@ -30,7 +30,7 @@ export function Hero() {
                 </h2>
                 <div className="text-xs leading-relaxed space-y-2 text-foreground/90">
                   <p className="font-poppins">
-                    tldr; just a curious mind learning and building software for the fun of it.
+                    software engineering was never more fun than it is right now
                   </p>
                 </div>
               </div>
@@ -73,7 +73,7 @@ export function Hero() {
                   </h2>
                   <div className="text-sm leading-relaxed space-y-4 text-foreground/90">
                     <p className="font-poppins">
-                      tldr; just a curious mind learning and building software for the fun of it.
+                      software engineering was never more fun than it is right now
                     </p>
                   </div>
                 </div>
