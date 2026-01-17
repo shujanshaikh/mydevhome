@@ -1,48 +1,43 @@
 import React from 'react';
 
 const Projects = () => {
-  const projects = [{
-     id : 0,
-     title : "ama",
-     description : "think lovable, but instead of the cloud, it works on your localhost \n\na full vscode editor in the browser, powered by an ai agent, making real changes to your local codebase with live preview",
-     tech : ["react", "typescript", "nodejs", "vscode", "ai"],
-     link : "https://ama.shujan.xyz",
-     github : ""
-  },
-  {
-     id : 1,
-     title : "grab-agent",
-     description : "Lovable, but for your localhost 👀\n\nIt's an extension of React Grab by @aidenybai, which basically grabs the elements and sends them to my hosted server. The server handles all the AI orchestration and makes changes to the local codebase.",
-     tech : ["react", "typescript", "nodejs", "express"],
-     link : "https://grab-agent.shujan.xyz",
-     github : "https://github.com/shujanshaikh/grab-agent"
-  },
+const projects = [{
+      id : 0,
+      title : "ama",
+      description : "think lovable, but instead of the cloud, it works on your localhost \n\na full vscode editor in the browser, powered by an ai agent, making real changes to your local codebase with live preview",
+      link : "https://ama.shujan.xyz",
+      github : ""
+   },
+   {
+      id : 1,
+      title : "grab-agent",
+      description : "Lovable, but for your localhost 👀\n\nIt's an extension of React Grab by @aidenybai, which basically grabs the elements and sends them to my hosted server. The server handles all the AI orchestration and makes changes to the local codebase.",
+      link : "https://grab-agent.shujan.xyz",
+      github : "https://github.com/shujanshaikh/grab-agent"
+   },
     {
-     id : 2,
-     title : "flycli (ai agent that lives in your browser)",
-     description : "flycli is your in-browser ai coding agent that understands your codebase, and edits your local files directly.",
-     tech : ["react", "tailwind", "typescript" , "aisdk" , "websocket" , "express"],
-     link : "https://flycli.vercel.app",
-     github : "https://github.com/shujanshaikh/flycli"
-  },
+      id : 2,
+      title : "flycli (ai agent that lives in your browser)",
+      description : "flycli is your in-browser ai coding agent that understands your codebase, and edits your local files directly.",
+      link : "https://flycli.vercel.app",
+      github : "https://github.com/shujanshaikh/flycli"
+   },
     {
-      id: 3,
-      title: "tabchat (ai chat & image generation platform)",
-      description: "an ai chat app and image generation platform supporting all major models for both chat and image generation.",
-      tech: ["nextjs", "typescript", "convex" , "better-auth" , "aisdk"],
-      link: "https://tabchat.vercel.app/",
-      github: "https://github.com/shujanshaikh/tabchat"
-    },
+       id: 3,
+       title: "tabchat (ai chat & image generation platform)",
+       description: "an ai chat app and image generation platform supporting all major models for both chat and image generation.",
+       link: "https://tabchat.vercel.app/",
+       github: "https://github.com/shujanshaikh/tabchat"
+     },
     {
-      id: 4,
-      title: "swiz (vibe coding platform)",
-      description: "build full‑stack web apps by prompting",
-      tech: ["next.js", "tailwind", "typescript" , "trpc" , "better-auth" ,  "ai sdk" , "e2b" , "postgres" , "drizzle" , "shadcn" , "polar"],
-      link: "https://www.swizdotdev.space/",
-      github: "https://github.com/shujanshaikh/swizdotdev"
-    },
+       id: 4,
+       title: "swiz (vibe coding platform)",
+       description: "build full‑stack web apps by prompting",
+       link: "https://www.swizdotdev.space/",
+       github: "https://github.com/shujanshaikh/swizdotdev"
+     },
     
-  ];
+   ];
 
   return (
     <>
@@ -65,17 +60,7 @@ const Projects = () => {
                       {project.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {project.tech.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="text-xs font-poppins"
-                        >
-                          {tech}
-                          {techIndex < project.tech.length - 1 && " • "}
-                        </span>
-                      ))}
-                    </div>
+                    
 
                     <div className="flex gap-4">
                       <a
