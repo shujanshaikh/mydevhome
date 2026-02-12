@@ -1,7 +1,16 @@
 import React from 'react';
 
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  tech?: string[];
+  link: string;
+  github: string;
+}
+
 const Projects = () => {
-const projects = [{
+  const projects: Project[] = [{
       id : 0,
       title : "ama",
       description : "think lovable, but instead of the cloud, it works on your localhost \n\na full vscode editor in the browser, powered by an ai agent, making real changes to your local codebase with live preview",
@@ -11,7 +20,7 @@ const projects = [{
    {
       id : 1,
       title : "grab-agent",
-      description : "Lovable, but for your localhost 👀\n\nIt's an extension of React Grab by @aidenybai, which basically grabs the elements and sends them to my hosted server. The server handles all the AI orchestration and makes changes to the local codebase.",
+      description : "Lovable, but for your localhost 👀\n\nIt&apos;s an extension of React Grab by @aidenybai, which basically grabs the elements and sends them to my hosted server. The server handles all the AI orchestration and makes changes to the local codebase.",
       link : "https://grab-agent.shujan.xyz",
       github : "https://github.com/shujanshaikh/grab-agent"
    },
@@ -37,7 +46,7 @@ const projects = [{
       <div className="screen-line-after border-x border-edge">
         <div className="px-4 py-4">
           <h2 className="text-base font-poppins font-semibold mb-3 flex items-center gap-2">
-            stuff i've worked on
+            stuff i&apos;ve worked on
           </h2>
 
           <div className="space-y-1">
@@ -54,13 +63,13 @@ const projects = [{
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-3">
-                      {project.tech && project.tech.map((tech, techIndex) => (
+                      {project.tech?.map((tech, techIndex) => (
                         <span
                           key={techIndex}
                           className="text-xs font-poppins"
                         >
                           {tech}
-                          {techIndex < project.tech.length - 1 && " • "}
+                          {techIndex < (project.tech?.length ?? 0) - 1 && " • "}
                         </span>
                       ))}
                     </div>
