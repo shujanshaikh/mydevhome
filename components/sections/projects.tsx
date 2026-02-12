@@ -29,22 +29,15 @@ const projects = [{
        link: "https://tabchat.vercel.app/",
        github: "https://github.com/shujanshaikh/tabchat"
      },
-    {
-       id: 4,
-       title: "swiz (vibe coding platform)",
-       description: "build full‑stack web apps by prompting",
-       link: "https://www.swizdotdev.space/",
-       github: "https://github.com/shujanshaikh/swizdotdev"
-     },
     
-   ];
+  ];
 
   return (
     <>
       <div className="screen-line-after border-x border-edge">
         <div className="px-4 py-4">
           <h2 className="text-base font-poppins font-semibold mb-3 flex items-center gap-2">
-            stuff i’ve worked on
+            stuff i've worked on
           </h2>
 
           <div className="space-y-1">
@@ -60,7 +53,17 @@ const projects = [{
                       {project.description}
                     </p>
 
-                    
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {project.tech && project.tech.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="text-xs font-poppins"
+                        >
+                          {tech}
+                          {techIndex < project.tech.length - 1 && " • "}
+                        </span>
+                      ))}
+                    </div>
 
                     <div className="flex gap-4">
                       <a
