@@ -15,7 +15,7 @@ const Projects = () => {
       title : "ama",
       description : "think lovable, but instead of the cloud, it works on your localhost \n\na full vscode editor in the browser, powered by an ai agent, making real changes to your local codebase with live preview",
       link : "https://ama.shujan.xyz",
-      github : ""
+      github : "https://github.com/shujanshaikh/ama"
    },
    {
       id : 1,

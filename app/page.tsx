@@ -2,6 +2,7 @@ import { SocialBar } from "@/components/site/social-bar";
 import { Hero } from "@/components/sections/hero";
 import Projects from "@/components/sections/projects";
 import Experience from "@/components/sections/experience";
+import { GithubSection } from "@/components/sections/github";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
           <Hero />
           <Projects />
           <Experience />
+          <GithubSection username="shujanshaikh" />
         </div>
       </main>
       <SocialBar />

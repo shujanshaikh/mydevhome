@@ -11,7 +11,6 @@ export function SocialBar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [emailCopied, setEmailCopied] = useState(false);
-
   useEffect(() => {
     setMounted(true);
   }, []);
