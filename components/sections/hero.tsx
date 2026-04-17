@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { PROFILE_IMAGE_URL } from "@/lib/profile";
 
 export function Hero() {
   const isMobile = useIsMobile();
@@ -34,7 +35,7 @@ export function Hero() {
             <div className="shrink-0 flex items-start">
               <div className="relative group aspect-square w-14 h-14">
                 <Image
-                  src="https://pbs.twimg.com/profile_images/1999562973195698181/76CT4Poj_400x400.jpg"
+                  src={PROFILE_IMAGE_URL}
                   alt="Shujan Shaikh's avatar"
                   fill
                   sizes="56px"
@@ -76,7 +77,7 @@ export function Hero() {
               <div className="mx-[2px] my-[2px] relative flex justify-center p-4">
                 <div className="relative group aspect-square w-44 h-44">
                   <Image
-                    src="https://pbs.twimg.com/profile_images/1999562973195698181/76CT4Poj_400x400.jpg"
+                    src={PROFILE_IMAGE_URL}
                     alt="Shujan Shaikh's avatar"
                     fill
                     sizes="176px"
