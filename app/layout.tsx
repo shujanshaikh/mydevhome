@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "Shujan Shaikh",
     description: "Full‑stack Engineer — Next.js, React, TypeScript",
     images: [PROFILE_IMAGE_URL],
