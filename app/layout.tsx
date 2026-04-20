@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme/theme-provider";
 import Script from "next/script";
 import { PROFILE_IMAGE_URL } from "@/lib/profile";
 
@@ -11,10 +10,10 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Shujan Shaikh",
-  description: "Full‑stack Engineer — Next.js, React, TypeScript",
+  description: "tldr; just a curious mind learning and building software for the fun of it.",
   openGraph: {
     title: "Shujan Shaikh",
-    description: "Full‑stack Engineer — Next.js, React, TypeScript",
+    description: "tldr; just a curious mind learning and building software for the fun of it.",
     type: "website",
     images: [
       {
@@ -28,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary",
     title: "Shujan Shaikh",
-    description: "Full‑stack Engineer — Next.js, React, TypeScript",
+    description: "tldr; just a curious mind learning and building software for the fun of it.",
     images: [PROFILE_IMAGE_URL],
   },
 };
@@ -39,9 +38,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-       <head>
-       {process.env.NODE_ENV === "development" && (
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        {process.env.NODE_ENV === "development" && (
           <Script
             src="//unpkg.com/react-grab/dist/index.global.js"
             crossOrigin="anonymous"
@@ -49,13 +48,8 @@ export default function RootLayout({
             data-enabled="true"
           />
         )}
-        {/* rest of your scripts go under */}
       </head>
-      <body className="antialiased min-h-screen bg-background text-foreground">
-        <ThemeProvider>
-          <main className="min-h-screen">{children}</main>
-        </ThemeProvider>
-      </body>
+      <body className="min-h-dvh antialiased">{children}</body>
     </html>
   );
 }

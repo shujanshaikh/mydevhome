@@ -1,21 +1,5 @@
-import { SocialBar } from "@/components/site/social-bar";
-import { Hero } from "@/components/sections/hero";
-import Projects from "@/components/sections/projects";
-import Experience from "@/components/sections/experience";
-import { GithubSection } from "@/components/sections/github";
+import { PortfolioMinimal } from "@/components/site/portfolio-minimal";
 
 export default function Home() {
-  return (
-    <div className="min-h-screen relative">
-      <main className="max-w-screen overflow-x-hidden px-2 flex justify-center">
-        <div className="w-full max-w-4xl mx-auto space-y-8 py-8">
-          <Hero />
-          <Projects />
-          <Experience />
-          <GithubSection username="shujanshaikh" />
-        </div>
-      </main>
-      <SocialBar />
-    </div>
-  );
+  return <PortfolioMinimal />;
 }
