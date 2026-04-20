@@ -9,6 +9,10 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
+  icons: {
+    icon: PROFILE_IMAGE_URL,
+    apple: PROFILE_IMAGE_URL,
+  },
   title: "Shujan Shaikh",
   description: "tldr; just a curious mind learning and building software for the fun of it.",
   openGraph: {
