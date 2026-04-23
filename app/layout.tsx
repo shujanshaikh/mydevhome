@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
+import { ThemeProvider } from "@/components/theme-provider";
 import { PROFILE_IMAGE_URL } from "@/lib/profile";
 
 const siteUrl =
@@ -42,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         {process.env.NODE_ENV === "development" && (
           <Script
@@ -53,7 +54,9 @@ export default function RootLayout({
           />
         )}
       </head>
-      <body className="min-h-dvh antialiased">{children}</body>
+      <body className="min-h-dvh antialiased">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

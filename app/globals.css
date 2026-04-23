@@ -1,16 +1,69 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:is(.dark *));
+.theme-root {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #000000;
+  --muted: #404040;
+  --muted-2: #525252;
+  --muted-3: #737373;
+  --bright: #000000;
+  --bright-hover: #000000;
+  --link-muted: #404040;
+  --link-hover: #000000;
+  --border-subtle: rgba(0, 0, 0, 0.12);
+  --divider: rgba(0, 0, 0, 0.12);
+  --ring-avatar: rgba(0, 0, 0, 0.14);
+  --cursor-blink: #000000;
+  --underline: rgba(0, 0, 0, 0.45);
+  --focus-ring: rgba(0, 0, 0, 0.35);
+  --social-muted: #525252;
+  --social-hover: #000000;
+  --project-title: #000000;
+  --grain-opacity: 0;
+  --selection-bg: rgba(0, 0, 0, 0.12);
+  --selection-fg: #000000;
+}
 
-:root {
+.theme-root.dark {
+  color-scheme: dark;
   --background: #000000;
   --foreground: #e8e8e6;
+  --muted: #5c5c58;
+  --muted-2: #6b6b66;
+  --muted-3: #4a4a46;
+  --bright: #f2f2f0;
+  --bright-hover: #ffffff;
+  --link-muted: #8a8a86;
+  --link-hover: #f0f0ee;
+  --border-subtle: rgba(255, 255, 255, 0.14);
+  --divider: rgba(255, 255, 255, 0.12);
+  --ring-avatar: rgba(255, 255, 255, 0.14);
+  --cursor-blink: #6a6a66;
+  --underline: rgba(168, 168, 164, 0.8);
+  --focus-ring: rgba(255, 255, 255, 0.4);
+  --social-muted: #4a4a46;
+  --social-hover: #b8b8b4;
+  --project-title: #d6d6d4;
+  --grain-opacity: 0.14;
+  --selection-bg: rgba(255, 255, 255, 0.2);
+  --selection-fg: #ffffff;
 }
 
 @layer base {
   body {
-    background-color: var(--background);
-    color: var(--foreground);
+    margin: 0;
+    min-height: 100dvh;
+    background-color: #ffffff;
     letter-spacing: 0;
+  }
+
+  body:has(.theme-root.dark) {
+    background-color: #000000;
+  }
+
+  ::selection {
+    background-color: var(--selection-bg);
+    color: var(--selection-fg);
   }
 }
