@@ -5,7 +5,7 @@ export const portfolio = {
   primaryLinks: [
     { label: "github", href: "https://github.com/shujanshaikh" },
     { label: "linkedin", href: "https://www.linkedin.com/in/shujanshaikh/" },
-    { label: "writing", href: "https://x.com/shujanshaikh" },
+    { label: "x", href: "https://x.com/shujanshaikh" },
     { label: "email", href: "mailto:shaikhshujan@gmail.com" },
   ] as const,
   social: [

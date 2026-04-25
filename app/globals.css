@@ -19,7 +19,6 @@
   --focus-ring: rgba(0, 0, 0, 0.35);
   --social-muted: #525252;
   --social-hover: #000000;
-  --project-title: #000000;
   --grain-opacity: 0;
   --selection-bg: rgba(0, 0, 0, 0.12);
   --selection-fg: #000000;
@@ -44,7 +43,6 @@
   --focus-ring: rgba(255, 255, 255, 0.4);
   --social-muted: #4a4a46;
   --social-hover: #b8b8b4;
-  --project-title: #d6d6d4;
   --grain-opacity: 0.14;
   --selection-bg: rgba(255, 255, 255, 0.2);
   --selection-fg: #ffffff;

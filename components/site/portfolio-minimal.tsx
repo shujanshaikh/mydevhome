@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { portfolio } from "@/lib/portfolio";
 import { PROFILE_IMAGE_URL } from "@/lib/profile";
-import { projectSummary, projects } from "@/lib/projects-data";
 
 const mono = IBM_Plex_Mono({
   subsets: ["latin"],
@@ -54,8 +53,8 @@ export function PortfolioMinimal() {
         style={{ backgroundImage: GRAIN_SVG, opacity: "var(--grain-opacity)" }}
       />
 
-      <main className="relative z-10 mx-auto flex w-full max-w-[min(100%,28rem)] flex-col px-6 py-16 pb-24">
-        <div className="w-full">
+      <div className="relative z-10 flex min-h-dvh w-full items-center justify-center px-6 py-12">
+        <main className="w-full max-w-[min(100%,28rem)] text-left">
           <div className="mb-10 flex items-start justify-between gap-4 sm:gap-5">
             <div className="flex min-w-0 flex-1 items-start gap-4 sm:gap-5">
               <div className="relative mt-0.5 h-14 w-14 shrink-0 overflow-hidden rounded-full ring-1 ring-[var(--ring-avatar)] sm:h-[4.5rem] sm:w-[4.5rem]">
@@ -109,7 +108,7 @@ export function PortfolioMinimal() {
 
           <div className="mb-10 h-px w-full bg-[var(--divider)]" role="presentation" />
 
-          <footer className="mb-16">
+          <footer>
             <ul className="flex flex-wrap items-center justify-start gap-x-8 gap-y-3 text-[0.6875rem] tracking-[0.18em] text-[var(--social-muted)]">
               {portfolio.social.map((item) => (
                 <li key={item.label}>
@@ -123,44 +122,8 @@ export function PortfolioMinimal() {
               ))}
             </ul>
           </footer>
-        </div>
-
-        <section aria-labelledby="work-heading" className="w-full">
-          <h2
-            id="work-heading"
-            className="mb-8 text-left text-[0.6875rem] font-normal tracking-[0.2em] text-[var(--muted)]"
-          >
-            work
-          </h2>
-          <ol className="flex flex-col gap-12">
-            {projects.map((project) => (
-              <li key={project.id}>
-                <h3 className="text-[0.8125rem] font-medium tracking-[0.04em] text-[var(--project-title)]">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-block rounded-sm ${linkMuted} hover:text-[var(--bright-hover)]`}
-                  >
-                    {project.title}
-                  </a>
-                </h3>
-                <p className="mt-2 text-[0.75rem] leading-[1.65] tracking-[0.03em] text-[var(--muted-2)]">
-                  {projectSummary(project.description)}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-x-8 gap-y-2 text-[0.6875rem] tracking-[0.14em]">
-                  <ExternalLink href={project.link} className={linkMuted}>
-                    live →
-                  </ExternalLink>
-                  <ExternalLink href={project.github} className={linkMuted}>
-                    repo →
-                  </ExternalLink>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }
